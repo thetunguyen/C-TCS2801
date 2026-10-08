@@ -6,36 +6,30 @@
 
 ```mermaid
 graph TD
-    %% Khởi động ứng dụng
-    Start([Mở ứng dụng]) --> Login[Màn hình Đăng nhập / Xác thực]
-    Login --> RoleSelect{Lựa chọn vai trò người dùng}
+    Start([Mở ứng dụng]) --> Login[Màn hình Đăng nhập]
+    Login --> RoleSelect{Lựa chọn vai trò}
 
-    %% Phân rã theo vai trò
-    RoleSelect -->|Diver (Thợ lặn)| DiverDash[Dashboard Thợ lặn]
-    RoleSelect -->|Swimmer (Bơi lội)| SwimmerDash[Dashboard Bơi lội]
-    RoleSelect -->|Fisher (Ngư dân)| FisherDash[Dashboard Ngư dân]
-    RoleSelect -->|Sailor (Thủy thủ)| SailorDash[Dashboard Thủy thủ]
+    RoleSelect -->|"Diver (Thợ lặn)"| DiverDash[Dashboard Thợ lặn]
+    RoleSelect -->|"Swimmer (Bơi lội)"| SwimmerDash[Dashboard Bơi lội]
+    RoleSelect -->|"Fisher (Ngư dân)"| FisherDash[Dashboard Ngư dân]
+    RoleSelect -->|"Sailor (Thủy thủ)"| SailorDash[Dashboard Thủy thủ]
 
-    %% Tính năng đặc thù theo vai trò
-    DiverDash --> DiverFeat[• Kiểm tra mức bình oxy <br/>• Chỉ số sinh trắc học: Nhịp tim, Huyết áp]
-    FisherDash --> FisherFeat[• Định vị loài cá xung quanh <br/>• Tracking vị trí GPS & Radar]
-    SailorDash --> SailorFeat[• Cảnh báo thời tiết trước khi ra khơi <br/>• Kết nối thiết bị đeo Wearables]
+    DiverDash --> DiverFeat["• Kiểm tra bình oxy<br/>• Chỉ số sinh trắc học"]
+    FisherDash --> FisherFeat["• Định vị loài cá<br/>• Tracking GPS & Radar"]
+    SailorDash --> SailorFeat["• Cảnh báo thời tiết<br/>• Kết nối thiết bị đeo"]
 
-    %% Tính năng chung (Core Features)
-    subgraph Core_Features [Tính năng cốt lõi & Môi trường]
-        Camera[Chụp ảnh rác thải / Ô nhiễm nhựa biển] --> Gallery[Lưu trữ vào thư viện App Gallery]
-        Gallery --> SendAuth[Gửi báo cáo đến Cơ quan Hải quan / Môi trường]
-        SendAuth --> Status[Cập nhật trạng thái: 'Submitted / Reported']
+    subgraph Core ["Tính năng Môi trường & Cộng đồng"]
+        Camera["Chụp ảnh rác thải nhựa"] --> Gallery["Lưu trữ App Gallery"]
+        Gallery --> SendAuth["Gửi báo cáo Hải quan"]
+        SendAuth --> Status["Trạng thái: Reported"]
         
-        Emergency[Hệ thống khẩn cấp AI & Còi báo động] --> Outsider[Cảnh báo sinh vật biển nguy hiểm cho bên ngoài]
-        TeamShare[Chia sẻ hình ảnh & Vị trí với đồng đội]
+        Emergency["Cảnh báo khẩn cấp AI"] --> Outsider["Còi báo động sinh vật biển"]
+        TeamShare["Chia sẻ vị trí với đồng đội"]
     end
 
-    %% Liên kết các vai trò với tính năng chung
     DiverDash -.-> Camera
     SwimmerDash -.-> Camera
     FisherDash -.-> Camera
     SailorDash -.-> Camera
 
-    %% Kết thúc luồng
-    Status --> End([Hoàn tất quy trình báo cáo])
+    Status --> End([Hoàn tất])
