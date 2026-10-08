@@ -6,25 +6,25 @@
 
 ```mermaid
 graph TD
-    Start([Mở ứng dụng]) --> Login[Màn hình Đăng nhập]
-    Login --> RoleSelect{Lựa chọn vai trò}
+    Start([App Launch]) --> Login[Login Screen]
+    Login --> RoleSelect{Role Selection}
 
-    RoleSelect -->|"Diver (Thợ lặn)"| DiverDash[Dashboard Thợ lặn]
-    RoleSelect -->|"Swimmer (Bơi lội)"| SwimmerDash[Dashboard Bơi lội]
-    RoleSelect -->|"Fisher (Ngư dân)"| FisherDash[Dashboard Ngư dân]
-    RoleSelect -->|"Sailor (Thủy thủ)"| SailorDash[Dashboard Thủy thủ]
+    RoleSelect -->|"Diver"| DiverDash[Diver Dashboard]
+    RoleSelect -->|"Swimmer"| SwimmerDash[Swimmer Dashboard]
+    RoleSelect -->|"Fisher"| FisherDash[Fisher Dashboard]
+    RoleSelect -->|"Sailor"| SailorDash[Sailor Dashboard]
 
-    DiverDash --> DiverFeat["• Kiểm tra bình oxy<br/>• Chỉ số sinh trắc học"]
-    FisherDash --> FisherFeat["• Định vị loài cá<br/>• Tracking GPS & Radar"]
-    SailorDash --> SailorFeat["• Cảnh báo thời tiết<br/>• Kết nối thiết bị đeo"]
+    DiverDash --> DiverFeat["• Oxygen Tank Level<br/>• Health Measures"]
+    FisherDash --> FisherFeat["• Fish Species Detection<br/>• GPS Tracking & Radar"]
+    SailorDash --> SailorFeat["• Weather Warnings<br/>• Wearable Device Sync"]
 
-    subgraph Core ["Tính năng Môi trường & Cộng đồng"]
-        Camera["Chụp ảnh rác thải nhựa"] --> Gallery["Lưu trữ App Gallery"]
-        Gallery --> SendAuth["Gửi báo cáo Hải quan"]
-        SendAuth --> Status["Trạng thái: Reported"]
+    subgraph Core ["Environmental & Community Features"]
+        Camera["Capture Marine Debris"] --> Gallery["App Gallery Storage"]
+        Gallery --> SendAuth["Submit to Marine Authorities"]
+        SendAuth --> Status["Status: Reported"]
         
-        Emergency["Cảnh báo khẩn cấp AI"] --> Outsider["Còi báo động sinh vật biển"]
-        TeamShare["Chia sẻ vị trí với đồng đội"]
+        Emergency["AI Emergency Alert"] --> Outsider["Marine Animal Alarm Sound"]
+        TeamShare["Share Location with Team"]
     end
 
     DiverDash -.-> Camera
@@ -32,4 +32,4 @@ graph TD
     FisherDash -.-> Camera
     SailorDash -.-> Camera
 
-    Status --> End([Hoàn tất])
+    Status --> End([Completed])
