@@ -1,6 +1,4 @@
 
-
-```markdown
 # 🌊 Marine Safety & Environmental Support Mobile App
 > **Coursework Project: UI/UX Design & Cloud Architecture (Azure)**
 
@@ -37,7 +35,6 @@ graph TD
     SailorDash -.-> Camera
 
     Status --> End([Completed])
-
 ```
 
 ## 📱 Figma Screen Breakdown (UI/UX Prototype)
