@@ -33,3 +33,16 @@ graph TD
     SailorDash -.-> Camera
 
     Status --> End([Completed])
+
+
+Trang 1: Màn hình Đăng nhập & Chọn vai trò (Role Selection Login)Có logo ứng dụng và 4 nút chọn rõ ràng tương ứng với: Diver (Thợ lặn), Swimmer (Bơi lội), Fisher (Ngư dân), và Sailor (Thủy thủ). Giảng viên nhìn vào đây sẽ thấy ngay tính phân quyền của hệ thống.
+
+Trang 2: Màn hình Dashboard dành cho Thợ lặn (Diver Dashboard)Hiển thị các chỉ số trực quan như: Mức bình dưỡng khí (Oxygen tank level indicator), nhịp tim, huyết áp.
+
+Trang 3: Màn hình dành cho Ngư dân (Fisher Radar & Tracking)Hiển thị tính năng định vị loài cá xung quanh và theo dõi tọa độ vị trí bằng cảm biến.
+
+Trang 4: Màn hình Báo cáo rác thải biển (Marine Debris Capture)Giao diện camera có nút chụp ảnh rác thải nhựa/ô nhiễm trôi nổi trên biển, kèm ô nhập ghi chú và định vị GPS tự động.
+
+Trang 5: Thư viện ảnh và Trạng thái gửi báo cáo (Gallery & Status)Hiển thị danh sách các bức ảnh rác đã chụp dưới dạng lưới (Grid), kèm theo thông tin chi tiết cơ quan hải quan nhận báo cáo và nhãn trạng thái đổi thành "Submitted / Reported".
+
+Trang 6: Màn hình Cảnh báo nguy hiểm & Thời tiết (Weather & Emergency)Hiển thị cảnh báo bão trước khi ra khơi, nút kích hoạt còi báo động sinh vật biển nguy hiểm và trạng thái kết nối thiết bị đeo (Wearables). 
