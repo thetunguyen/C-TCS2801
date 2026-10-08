@@ -33,3 +33,11 @@ graph TD
     SailorDash -.-> Camera
 
     Status --> End([Completed])
+
+
+Tech Stack & Tools Used
+UI/UX Design & Prototype: Figma (Interactive high-fidelity prototypes).
+
+Cloud Architecture: Microsoft Azure (Azure Blob Storage for debris images & Database for reporting status).
+
+Documentation & Version Control: GitHub Markdown & Mermaid.js.
